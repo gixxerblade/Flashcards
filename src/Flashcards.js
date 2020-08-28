@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const Flashcards = ({ flashcard }) => {
-   console.log(flashcard.answer);
   const [flip, setFlip] = useState(false);
   return (
     <div
@@ -12,10 +11,8 @@ const Flashcards = ({ flashcard }) => {
         {flip ? flashcard.answer : flashcard.question}
       </div>
       <ul className="back">
-        {flashcard.answer.map(list=>{
-          return(
-            <li key={flashcard.id}>{list}</li>
-          )
+        {flashcard.answer.map((list) => {
+          return <li key={flashcard.id}>{list}</li>;
         })}
       </ul>
     </div>
